@@ -1,0 +1,17 @@
+@(bean: models.beans.HomeBeans, fruits: List[String])
+
+@main(bean.title) {
+  <h1>@bean.pageTitle</h1>
+  <p>@bean.message</p>
+  <ul>
+      @for(fruit <- fruits) {
+          @if(fruit.length() > 0) {
+            <li>
+                <a href="/get?test=@fruit">
+                    @fruit
+                </a>
+            </li>
+          }
+      }
+  </ul>
+}

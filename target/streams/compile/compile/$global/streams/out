@@ -1,0 +1,5 @@
+[error] D:\workspace\playtest\app\controllers\HomeController.java:40:1: クラス views.html.getのメソッド renderは指定された型に適用できません。
+[error]   期待値: java.lang.String
+[error]   検出値: 引数がありません
+[error]   理由: 実引数リストと仮引数リストの長さが異なります
+[error]         return ok(views.html.get.render());
