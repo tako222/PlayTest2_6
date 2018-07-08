@@ -2,10 +2,9 @@ package controllers;
 
 import models.Fruits;
 import models.beans.HomeBeans;
-import play.mvc.*;
+import play.mvc.Controller;
+import play.mvc.Result;
 
-import javax.swing.text.View;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -15,12 +14,6 @@ import java.util.Map;
  */
 public class HomeController extends Controller {
 
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
     public Result index() {
         HomeBeans bean = new HomeBeans();
         bean.pageTitle = "Home Title";
