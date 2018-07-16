@@ -1,0 +1,46 @@
+@(form: controllers.forms.TestForm)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Result</title>
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/form.css")" media="all">
+</head>
+<body>
+    <div>
+        <dl class="name">
+            <dt><label for="name">お名前</label></dt>
+            <dd>@form.getName</dd>
+        </dl>
+        <dl class="age">
+            <dt><label for="name">ご年齢</label></dt>
+            <dd>@form.getAge</dd>
+        </dl>
+        <dl class="sex">
+            <dt>性別</dt>
+            <dd>@form.getSex</dd>
+        </dl>
+        <dl class="kind">
+            <dt>系統</dt>
+            <dd>
+                @for(kind <- form.getKind) {
+                    @kind
+                }
+            </dd>
+        </dl>
+        <dl class="company">
+            <dt>好きなアニメ制作会社</dt>
+            <dd>@form.getCompanyString</dd>
+        </dl>
+        <dl class="comment">
+            <dt>なんでも自由欄</dt>
+            <dd>@form.getComment</dd>
+        </dl>
+
+        <div>
+            <a href="/form">戻る</a>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,12 +1,11 @@
 package controllers;
 
 import models.Fruits;
-import models.beans.HomeBeans;
+import controllers.beans.HomeBeans;
 import play.mvc.Controller;
 import play.mvc.Result;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -24,12 +23,7 @@ public class HomeController extends Controller {
         return ok(views.html.index.render(bean, fruits));
     }
 
-    public Result requestGet() {
-        Map<String, String[]> params = request().queryString();
-        String value = null;
-        if (params.containsKey("test")) {
-            value = params.get("test")[0];
-        }
+    public Result requestGet(String value) {
         return ok(views.html.get.render(value));
     }
 }

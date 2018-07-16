@@ -4,7 +4,11 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-GET     /get                        controllers.HomeController.requestGet
+GET     /get                        controllers.HomeController.requestGet(test : String)
+GET     /form                       controllers.FormController.index
++ nocsrf
+POST    /form                       controllers.FormController.requestPost
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

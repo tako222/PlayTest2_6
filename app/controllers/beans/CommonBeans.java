@@ -1,4 +1,4 @@
-package models.beans;
+package controllers.beans;
 
 import common.SystemConstants;
 

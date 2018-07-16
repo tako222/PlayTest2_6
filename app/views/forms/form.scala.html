@@ -1,0 +1,63 @@
+@(form: Form[controllers.forms.TestForm])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")" media="all">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/form.css")" media="all">
+</head>
+<body>
+    @helper.form(action = routes.FormController.requestPost, 'id -> "testForm") {
+        <div class="table">
+            <dl class="name">
+                <dt><label for="name">お名前<span class="required">*</span></span></label></dt>
+                <dd><input type="text" id="name" name="name" class="text" maxlength="100" placeholder="泉 こなた" /></dd>
+            </dl>
+            <dl class="age">
+                <dt><label for="name">ご年齢</label><span class="required">*</span></dt>
+                <dd><input type="text" id="age"  name="age"  class="text" maxlength="10" placeholder="19" /></dd>
+            </dl>
+            <dl class="sex">
+                <dt>性別</dt>
+                <dd>
+                    <input type="radio" id="sex_man" name="sex" value="男"   /><label for="sex_man">男</label>
+                    <input type="radio" id="sex_fem" name="sex" value="女"   /><label for="sex_fem">女</label>
+                    <input type="radio" id="sex_unk" name="sex" value="不明" /><label for="sex_unk">不明</label>
+                </dd>
+            </dl>
+            <dl class="kind">
+                <dt>系統</dt>
+                <dd>
+                    <select id="kind" name="kind" class="selectbox">
+                        <option value="">選択してください</option>
+                        <option value="文系">文系</option>
+                        <option value="理系">理系</option>
+                        <option value="体育会系">体育会系</option>
+                        <option value="芸術系">芸術系</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl class="company">
+                <dt>好きなアニメ制作会社</dt>
+                <dd>
+                    <input type="checkbox" id="com_kyoto"    name="company[]" value="京アニ"   /><label for="com_kyoto"   >京アニ</label>
+                    <input type="checkbox" id="com_madhouse" name="company[]" value="MADHOUSE" /><label for="com_madhouse">MADHOUSE</label>
+                    <input type="checkbox" id="com_jc_staff" name="company[]" value="JC STAFF" /><label for="com_jc_staff">JC STAFF</label>
+                    <input type="checkbox" id="com_dogakobo" name="company[]" value="動画工房"  /><label for="com_dogakobo">動画工房</label>
+                    <input type="checkbox" id="com_larche"   name="company[]" value="Lerche"   /><label  for="com_larche">Lerche</label>
+                </dd>
+            </dl>
+            <dl class="comment">
+                <dt>なんでも自由欄</dt>
+                <dd>
+                    <textarea id="comment" name="comment" cols="35" rows="7"  placeholder="ご自由にご記入ください"></textarea>
+                </dd>
+            </dl>
+            <div>
+                <button class="submit" type="submit">送信</button>
+            </div>
+        </div>
+    }
+</body>
+</html>
